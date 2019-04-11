@@ -8,6 +8,7 @@ import java.util.Iterator;
 import java.util.Map.Entry;
 
 import org.bson.Document;
+import org.epos_ip.basicCerifConverterPlugin.core.DatabaseConnection;
 import org.epos_ip.beans.DDSS;
 import org.epos_ip.beans.Distribution;
 import org.epos_ip.utility.Utils;
@@ -65,10 +66,6 @@ public class JSONMapper extends GenericMapper {
 			ddss = new JsonArray();
 			break;
 		default:
-			if(resultSet.getAsJsonObject().has("TCSRESULT")) {
-				return TCSMapper.mapping_TCSformat2GEOJson(resultSet.getAsJsonObject().get("TCSRESULT").getAsString(), format);
-			}
-			else return new JsonObject();
 
 		}
 		try {
