@@ -4,15 +4,6 @@ import java.util.Map.Entry;
 
 import javax.xml.stream.FactoryConfigurationError;
 
-import org.epos.information.Servicetypes;
-import org.epos.information.Types;
-import org.epos.jsonmessage.JsonMessage;
-import org.epos.mq.Handler;
-import org.epos_ip.mapper.GenericMapper;
-import org.epos_ip.mapper.JSONMapper;
-import org.epos_ip.mapper.JSONMapperDetail;
-import org.epos_ip.mapper.XMLMapper;
-
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 

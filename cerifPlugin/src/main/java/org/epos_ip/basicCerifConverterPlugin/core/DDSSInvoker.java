@@ -1,7 +1,5 @@
 package org.epos_ip.basicCerifConverterPlugin.core;
 
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -12,6 +10,9 @@ import org.bson.Document;
 import org.epos_ip.basicCerifConverterPlugin.GenericMapper.JSONDDSS;
 import org.epos_ip.beans.DDSS;
 import org.epos_ip.beans.Distribution;
+import org.epos_ip.converter.common.exception.PluginConfigurationException;
+import org.epos_ip.converter.common.java.CallableJavaPlugin;
+import org.epos_ip.converter.common.plugin.type.ConversionDescriptor;
 import org.epos_ip.utility.Utils;
 
 import com.google.gson.Gson;
@@ -22,10 +23,16 @@ import com.google.gson.JsonParser;
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.FindIterable;
 
-public class DDSSInvoker {
+public class DDSSInvoker extends CallableJavaPlugin {
+
+	protected DDSSInvoker(ConversionDescriptor conversion) throws PluginConfigurationException {
+		super(conversion);
+		// TODO Auto-generated constructor stub
+	}
 
 	private static Gson gson = new Gson();
 
+	@Override
 	protected Optional<String> doInvoke(String payload) {
 
 		JsonObject resultJson = new JsonObject();

@@ -6,9 +6,7 @@ import org.epos_ip.beans.DDSS;
 import org.epos_ip.beans.Distribution;
 import org.epos_ip.utility.Utils;
 
-import com.google.gson.Gson;
 import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 
 
 public class JSONDDSS {
