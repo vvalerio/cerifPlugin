@@ -1,47 +1,47 @@
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/utility/EposEntities.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/beans/Dataset.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/beans/Location.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/utility/Utils.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/beans/MapperBean.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/basicCerifConverterPlugin/core/Mapper.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/basicCerifConverterPlugin/GenericMapper/GenericMapper.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/basicCerifConverterPlugin/GenericMapper/JSONDistribution.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/beans/MapperBeanImage.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/beans/DatasetDistribution.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/beans/Publication.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/basicCerifConverterPlugin/GenericMapper/JSONWebservice.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/basicCerifConverterPlugin/GenericMapper/JSONFacetsOrganisations.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/beans/Person.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/beans/CatalogRecord.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/beans/ServiceParameter.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/basicCerifConverterPlugin/GenericMapper/JSONFacetsKeywords.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/beans/SeismicEventBean.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/beans/Distribution.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/basicCerifConverterPlugin/GenericMapper/JSONPerson.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/beans/Organisation.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/basicCerifConverterPlugin/GenericMapper/JSONMapperDetail.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/basicCerifConverterPlugin/interfaces/MapperInterface.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/basicCerifConverterPlugin/GenericMapper/JSONKeywords.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/beans/Project.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/basicCerifConverterPlugin/GenericMapper/JSONMapper.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/basicCerifConverterPlugin/GenericMapper/JSONOrganisation.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/basicCerifConverterPlugin/GenericMapper/JSONDistributionDefault.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/basicCerifConverterPlugin/core/DDSSInvoker.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/beans/Webservice.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/beans/package-info.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/beans/TimePeriod.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/beans/DDSS.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/utility/Check.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/beans/Facility.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/beans/Address.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/beans/Equipment.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/beans/Service.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/beans/StringTrimXmlAdapter.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/basicCerifConverterPlugin/core/DatabaseConnection.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/basicCerifConverterPlugin/GenericMapper/JSONWebserviceDetail.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/basicCerifConverterPlugin/GenericMapper/JSONDDSS.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/beans/StationBean.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/beans/Catalog.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/beans/Baseline.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/beans/ValueAndUnit.java
-/Users/valerio/git/basiccerifplugin/cerifPlugin/src/main/java/org/epos_ip/basicCerifConverterPlugin/GenericMapper/JSONDomains.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/beans/MapperBean.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/beans/StringTrimXmlAdapter.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/basicCerifConverterPlugin/GenericMapper/JSONKeywords.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/basicCerifConverterPlugin/core/DatabaseConnection.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/basicCerifConverterPlugin/GenericMapper/JSONDomains.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/beans/Baseline.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/beans/StationBean.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/basicCerifConverterPlugin/GenericMapper/JSONMapper.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/utility/Check.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/basicCerifConverterPlugin/interfaces/MapperInterface.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/beans/ValueAndUnit.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/beans/Dataset.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/beans/DatasetDistribution.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/utility/Utils.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/basicCerifConverterPlugin/core/Mapper.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/beans/Organisation.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/beans/SeismicEventBean.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/basicCerifConverterPlugin/GenericMapper/JSONWebservice.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/basicCerifConverterPlugin/GenericMapper/JSONPerson.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/beans/package-info.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/basicCerifConverterPlugin/GenericMapper/GenericMapper.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/beans/Webservice.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/basicCerifConverterPlugin/GenericMapper/JSONFacetsOrganisations.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/beans/Publication.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/basicCerifConverterPlugin/GenericMapper/JSONDistribution.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/beans/Person.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/beans/CatalogRecord.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/beans/ServiceParameter.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/basicCerifConverterPlugin/GenericMapper/JSONWebserviceDetail.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/beans/Distribution.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/beans/Service.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/beans/Project.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/beans/MapperBeanImage.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/beans/DDSS.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/basicCerifConverterPlugin/GenericMapper/JSONDistributionDefault.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/basicCerifConverterPlugin/GenericMapper/JSONMapperDetail.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/beans/Address.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/beans/Facility.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/utility/EposEntities.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/basicCerifConverterPlugin/GenericMapper/JSONOrganisation.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/beans/Equipment.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/basicCerifConverterPlugin/GenericMapper/JSONFacetsKeywords.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/basicCerifConverterPlugin/GenericMapper/JSONDDSS.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/beans/Catalog.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/beans/Location.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/basicCerifConverterPlugin/core/DDSSInvoker.java
+/Users/valerio/Documents/Docker/AREA 51/cerifPlugin/cerifPlugin/src/main/java/org/epos_ip/beans/TimePeriod.java
