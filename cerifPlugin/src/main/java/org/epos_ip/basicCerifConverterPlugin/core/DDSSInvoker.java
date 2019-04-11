@@ -24,6 +24,12 @@ import com.mongodb.BasicDBObject;
 import com.mongodb.client.FindIterable;
 
 public class DDSSInvoker extends CallableJavaPlugin {
+	
+	public static void main(String args[]) throws ClassNotFoundException{
+	      Class.forName("org.epos_ip.basicCerifConverterPlugin.core.DDSSInvoker");
+	      System.out.println("DDSSInvoker class successfully loaded");
+	   }
+
 
 	protected DDSSInvoker(ConversionDescriptor conversion) throws PluginConfigurationException {
 		super(conversion);
