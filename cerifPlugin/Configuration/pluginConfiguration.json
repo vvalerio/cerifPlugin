@@ -1,6 +1,6 @@
 {
 	"name": "basicCerifPluginDDSS",
-    "plugin-location":"https://epos-ci.brgm.fr/Valerio.Vinciarelli/basiccerifplugin.git",
+    "plugin-location":"https://github.com/vvalerio/cerifPlugin.git",
 	"version": "0.0.1",
 	"author": {
 		"name": "Valerio Vinciarelli",
