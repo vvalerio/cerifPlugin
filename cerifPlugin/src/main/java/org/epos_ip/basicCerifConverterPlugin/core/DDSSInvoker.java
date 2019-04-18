@@ -4,11 +4,16 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map.Entry;
+import java.util.Optional;
 
 import org.bson.Document;
 import org.epos_ip.basicCerifConverterPlugin.GenericMapper.JSONDDSS;
 import org.epos_ip.beans.DDSS;
 import org.epos_ip.beans.Distribution;
+import org.epos_ip.converter.common.exception.PayloadProcessingException;
+import org.epos_ip.converter.common.exception.PluginConfigurationException;
+import org.epos_ip.converter.common.java.CallableJavaPlugin;
+import org.epos_ip.converter.common.plugin.type.ConversionDescriptor;
 import org.epos_ip.utility.Utils;
 
 import com.google.gson.Gson;
@@ -19,24 +24,22 @@ import com.google.gson.JsonParser;
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.FindIterable;
 
-public class DDSSInvoker{
+public class DDSSInvoker extends CallableJavaPlugin {
 	
 	public static void main(String args[]) throws ClassNotFoundException{
 	      Class.forName("org.epos_ip.basicCerifConverterPlugin.core.DDSSInvoker");
 	      System.out.println("DDSSInvoker class successfully loaded");
 	   }
 
-	/*protected DDSSInvoker(ConversionDescriptor conversion) throws PluginConfigurationException {
+	public DDSSInvoker(ConversionDescriptor conversion) throws PluginConfigurationException {
 		super(conversion);
 		// TODO Auto-generated constructor stub
-	}*/
+	}
 
 	private static Gson gson = new Gson();
 
-	//@Override
-	//protected Optional<String> doInvoke(String payload) {
-	public DDSSInvoker(String payload) {
-
+	@Override
+	protected Optional<String> doInvoke(String payload) throws PayloadProcessingException {
 		JsonObject resultJson = new JsonObject();
 		JsonObject payloadJson  =  gson.fromJson(payload, JsonObject.class);
 		ArrayList<DDSS> ddssList = new ArrayList<DDSS>();
@@ -133,8 +136,7 @@ public class DDSSInvoker{
 			});
 			resultJson.getAsJsonObject().add("ddss", jsonParser.parse(gson.toJson(ddssList)).getAsJsonArray());
 		}
-
-		System.out.println(resultJson.getAsString());
+		return Optional.of(resultJson.getAsString());
 	}
 
 }
