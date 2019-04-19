@@ -3,6 +3,7 @@ package org.epos_ip.beans;
 import java.util.List;
 
 public class Distribution {
+	
 	private transient String productid;
 	private transient String distributionid;
 	private String id;

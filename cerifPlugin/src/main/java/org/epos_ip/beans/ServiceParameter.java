@@ -15,6 +15,7 @@ public class ServiceParameter {
 	private String property;
 	private String valuePattern;
 
+
 	public String getName() {
 		return name;
 	}

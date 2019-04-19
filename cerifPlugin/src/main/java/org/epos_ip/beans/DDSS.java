@@ -12,6 +12,7 @@ public class DDSS {
 	private String endDate;
 	private ArrayList<Distribution> distributions;
 	
+
 	public DDSS(){
 		distributions = new ArrayList<>();
 		productid = new ArrayList<>();
