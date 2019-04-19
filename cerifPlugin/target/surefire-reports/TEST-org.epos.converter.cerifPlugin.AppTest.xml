@@ -26,7 +26,7 @@
 "/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="os.name" value="Mac OS X"/>
-    <property name="classworlds.conf" value="/Users/valerio/eclipse/java-oxygen/ConverterGitWorkspace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf3583785706498682762.tmp"/>
+    <property name="classworlds.conf" value="/Users/valerio/eclipse/java-oxygen/ConverterGitWorkspace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf2386866247365695623.tmp"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/Users/valerio/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
     <property name="jdk.debug" value="release"/>
@@ -44,7 +44,7 @@
     <property name="java.class.path" value="/Users/valerio/.p2/pool/plugins/org.eclipse.m2e.maven.runtime_1.8.3.20180227-2135/jars/plexus-classworlds-2.5.2.jar"/>
     <property name="java.vm.specification.version" value="10"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B install"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B package"/>
     <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk/Contents/Home"/>
     <property name="user.language" value="it"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
