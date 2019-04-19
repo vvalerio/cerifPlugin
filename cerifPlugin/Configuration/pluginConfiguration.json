@@ -8,11 +8,7 @@
 	},
 	"execution": {
 		"invoker-type": "Java-Reflection",
-<<<<<<< HEAD
 		"target-detail": "cerifPlugin/target/;cerifPlugin-0.0.1-SNAPSHOT.jar;org.epos_ip.basicCerifConverterPlugin.core.DDSSInvoker"
-=======
-		"target-detail": "cerifPlugin/target/;cerifPlugin-0.0.1-SNAPSHOT-jar-with-dependencies.jar;org.epos_ip.basicCerifConverterPlugin.core.DDSSInvoker"
->>>>>>> 5dd374fa5c31c98c35816ee76c60dbc853911fc5
 	},
 	"conversions": [{
 		"request": {
@@ -25,7 +21,7 @@
 			}
 		},
 		"response": {
-			"content-type": "application/json",	
+			"content-type": "application/json",			
 			"schema": {													
 				"name": "icsjson.json",
 				"location-type": "path",						 	
