@@ -1,0 +1,33 @@
+{
+    "id" : "cerifPlugin",
+	"name": "basicCerifPluginDDSS",
+    "plugin-location":"https://github.com/vvalerio/cerifPlugin.git",
+	"version": "0.0.1",
+	"author": {
+		"name": "Valerio Vinciarelli",
+		"contact": "valerio.vinciarelli@ingv.it"
+	},
+	"execution": {
+		"invoker-type": "Java-Reflection",
+		"target-detail": "cerifPlugin/target/;cerifPlugin-0.0.1-SNAPSHOT-jar-with-dependencies.jar;org.epos_ip.basicCerifConverterPlugin.core.DDSSInvoker"
+	},
+	"conversions": [{
+		"request": {
+			"type": "ddss",				
+			"content-type": "application/json",
+          "validation": {
+			"schema-name": "cerifschema.json",		
+		    "schema-location-type": "path",						
+		    "schema-location": "cerifPlugin/Configuration/"
+          }
+		},
+		"response": {
+			"content-type": "application/json",
+          "validation": {
+			"schema-name": "icsjson.json",
+			"schema-location-type": "path",						 	
+			"schema-location": "cerifPlugin/Configuration/"
+          }
+		}
+	}]
+}
