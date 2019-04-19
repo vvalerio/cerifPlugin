@@ -7,7 +7,7 @@
 		"contact": "valerio.vinciarelli@ingv.it"
 	},
 	"execution": {
-		"invoker-type": "JAVA_REFLECTION",
+		"invoker-type": "Java-Reflection",
 		"target-detail": "cerifPlugin/target/;cerifPlugin-0.0.1-SNAPSHOT-jar-with-dependencies.jar;org.epos_ip.basicCerifConverterPlugin.core.DDSSInvoker"
 	},
 	"conversions": [{
@@ -21,7 +21,7 @@
 			}
 		},
 		"response": {
-			"content-type": "application/json",			
+			"content-type": "application/json",	
 			"schema": {													
 				"name": "icsjson.json",
 				"location-type": "path",						 	
