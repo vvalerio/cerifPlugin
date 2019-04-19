@@ -17,7 +17,7 @@
 			"schema": {								
 				"name": "cerifschema.json",		
 				"location-type": "path",						
-				"location": "cerifPlugin/Configuration/cerifschema.json"
+				"location": "cerifPlugin/Configuration/"
 			}
 		},
 		"response": {
@@ -25,7 +25,7 @@
 			"schema": {													
 				"name": "icsjson.json",
 				"location-type": "path",						 	
-				"location": "cerifPlugin/Configuration/icsjson.json"
+				"location": "cerifPlugin/Configuration/"
 			}
 		}
 	}]
