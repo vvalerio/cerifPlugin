@@ -12,7 +12,7 @@
 	},
 	"conversions": [{
 		"request": {
-			"type": "ddss",				
+			"type": "metadata",				
 			"content-type": "application/json",			
 			"schema": {								
 				"name": "cerifschema.json",		
