@@ -220,7 +220,7 @@ public class CerifPluginInvoker extends CallableJavaPlugin {
 
 
 		}
-		return Optional.of(resultJson.getAsString());
+		return Optional.of(resultJson.toString());
 	}
 	
 	protected static Optional<String> doTest(String payload) {
