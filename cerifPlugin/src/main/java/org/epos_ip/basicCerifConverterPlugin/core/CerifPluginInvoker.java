@@ -73,6 +73,22 @@ public class CerifPluginInvoker extends CallableJavaPlugin {
 
 		for(Entry<String, JsonElement> entries : payloadJson.entrySet())
 		{
+			switch(entries.getKey().replaceAll("ResultSet_", "").split("_")[0])
+			{
+			case "domains":
+				domains = new JsonArray();
+				break;
+			case "keywords":
+				keywords = new JsonArray();
+				break;
+			case "facets":
+				facets = new JsonArray();
+				keywords = new JsonArray();
+				break;
+			case "ddss":
+				ddss = new JsonArray();
+				break;
+			}
 			JsonArray result = (JsonArray) entries.getValue();
 			for(int i = 0; i<result.size(); i++)
 			{
@@ -88,16 +104,12 @@ public class CerifPluginInvoker extends CallableJavaPlugin {
 					JSONWebservice.generate(results, result, i);
 					break;
 				case "domains":
-					domains = new JsonArray();
 					JSONDomains.generate(resultJson, results, domains, result, i);
 					break;
 				case "keywords":
-					keywords = new JsonArray();
 					JSONKeywords.generate(keywords, result, i);
 					break;
 				case "facets":
-					facets = new JsonArray();
-					keywords = new JsonArray();
 					if(entries.getKey().replaceAll("ResultSet_", "").split("_")[1].equals("keywords")) {
 						JSONFacetsKeywords.generate(keywordsComplex, result, i);
 					}
@@ -106,7 +118,6 @@ public class CerifPluginInvoker extends CallableJavaPlugin {
 					}
 					break;
 				case "ddss":
-					ddss = new JsonArray();
 					JSONDDSS.generate(ddssList, distributionList, result, i);
 					break;
 				}
