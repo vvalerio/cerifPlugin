@@ -43,6 +43,9 @@ public class CerifPluginInvoker extends CallableJavaPlugin {
 	public static void main(String args[]) throws ClassNotFoundException{
 		Class.forName("org.epos_ip.basicCerifConverterPlugin.core.CerifPluginInvoker");
 		System.out.println("DDSSInvoker class successfully loaded");
+
+		System.out.println(CerifPluginInvoker.doTest("{\"ResultSet_update\":[]}"));
+		System.out.println(CerifPluginInvoker.doTest("{\"ResultSet_facets_keywords\":[],\"ResultSet_facets_organisation\":[]}"));
 	}
 
 	public CerifPluginInvoker(ConversionDescriptor conversion) throws PluginConfigurationException {
@@ -57,7 +60,6 @@ public class CerifPluginInvoker extends CallableJavaPlugin {
 		JsonObject resultJson = new JsonObject();
 		JsonObject payloadJson  =  gson.fromJson(payload, JsonObject.class);
 
-		JsonObject summary = null;
 		JsonArray keywords = null;
 		JsonArray domains = null;
 		JsonArray facets = null;
@@ -66,7 +68,6 @@ public class CerifPluginInvoker extends CallableJavaPlugin {
 		HashMap<String, HashSet<String>> organisationsComplex = new HashMap<>();
 		ArrayList<DDSS> ddssList = new ArrayList<DDSS>();
 		ArrayList<Distribution> distributionList = new ArrayList<Distribution>();
-		int counter = 0;
 
 		JsonArray results = new JsonArray();
 
@@ -75,15 +76,12 @@ public class CerifPluginInvoker extends CallableJavaPlugin {
 			JsonArray result = (JsonArray) entries.getValue();
 			for(int i = 0; i<result.size(); i++)
 			{
-				counter++;
 				switch(entries.getKey().replaceAll("ResultSet_", "").split("_")[0])
 				{
 				case "person":
-					summary = new JsonObject();
 					JSONPerson.generate(results, result, i);
 					break;
 				case "organisation":
-					summary = new JsonObject();
 					JSONOrganisation.generate(results, result, i);
 					break;
 				case "webservice":
@@ -222,12 +220,14 @@ public class CerifPluginInvoker extends CallableJavaPlugin {
 		}
 		return Optional.of(resultJson.toString());
 	}
-	
+
 	protected static Optional<String> doTest(String payload) {
+
+		System.out.println(payload);
 		JsonObject resultJson = new JsonObject();
 		JsonObject payloadJson  =  gson.fromJson(payload, JsonObject.class);
 
-		JsonObject summary = null;
+		System.out.println("PAYLOAD: "+payloadJson.toString());
 		JsonArray keywords = null;
 		JsonArray domains = null;
 		JsonArray facets = null;
@@ -236,40 +236,50 @@ public class CerifPluginInvoker extends CallableJavaPlugin {
 		HashMap<String, HashSet<String>> organisationsComplex = new HashMap<>();
 		ArrayList<DDSS> ddssList = new ArrayList<DDSS>();
 		ArrayList<Distribution> distributionList = new ArrayList<Distribution>();
-		int counter = 0;
 
 		JsonArray results = new JsonArray();
 
+		System.out.println("ENTRY SET: "+payloadJson.entrySet());
+
 		for(Entry<String, JsonElement> entries : payloadJson.entrySet())
 		{
+			switch(entries.getKey().replaceAll("ResultSet_", "").split("_")[0])
+			{
+			case "domains":
+				domains = new JsonArray();
+				break;
+			case "keywords":
+				keywords = new JsonArray();
+				break;
+			case "facets":
+				facets = new JsonArray();
+				keywords = new JsonArray();
+				break;
+			case "ddss":
+				ddss = new JsonArray();
+				break;
+			}
 			JsonArray result = (JsonArray) entries.getValue();
 			for(int i = 0; i<result.size(); i++)
 			{
-				counter++;
 				switch(entries.getKey().replaceAll("ResultSet_", "").split("_")[0])
 				{
 				case "person":
-					summary = new JsonObject();
 					JSONPerson.generate(results, result, i);
 					break;
 				case "organisation":
-					summary = new JsonObject();
 					JSONOrganisation.generate(results, result, i);
 					break;
 				case "webservice":
 					JSONWebservice.generate(results, result, i);
 					break;
 				case "domains":
-					domains = new JsonArray();
 					JSONDomains.generate(resultJson, results, domains, result, i);
 					break;
 				case "keywords":
-					keywords = new JsonArray();
 					JSONKeywords.generate(keywords, result, i);
 					break;
 				case "facets":
-					facets = new JsonArray();
-					keywords = new JsonArray();
 					if(entries.getKey().replaceAll("ResultSet_", "").split("_")[1].equals("keywords")) {
 						JSONFacetsKeywords.generate(keywordsComplex, result, i);
 					}
@@ -278,7 +288,6 @@ public class CerifPluginInvoker extends CallableJavaPlugin {
 					}
 					break;
 				case "ddss":
-					ddss = new JsonArray();
 					JSONDDSS.generate(ddssList, distributionList, result, i);
 					break;
 				}
@@ -287,6 +296,7 @@ public class CerifPluginInvoker extends CallableJavaPlugin {
 
 		if(facets!= null) {
 			JsonArray kw = new JsonArray();
+			System.out.println("STO UQI");
 			keywordsComplex.entrySet().forEach(r -> {
 				JsonObject jsonObject = new JsonObject();
 				jsonObject.addProperty("name", r.getKey());
@@ -390,6 +400,8 @@ public class CerifPluginInvoker extends CallableJavaPlugin {
 
 
 		}
+
+		System.out.println(resultJson.toString());
 		return Optional.of(resultJson.toString());
 	}
 }
