@@ -34,7 +34,7 @@ public class JSONDDSS {
 		DDSS ddss = null;
 		Distribution distribution = null;
 
-		System.out.println(result.get(i).toString());
+		//System.out.println(result.get(i).toString());
 		
 		
 		
@@ -80,6 +80,11 @@ public class JSONDDSS {
 					if(item.getProductid().get(0).equals(result.get(i).getAsJsonObject().get("productid").getAsString())) 
 						setInformationDDSS(item, result, i);
 				}
+			}else if(result.get(i).getAsJsonObject().get("labelclass").getAsString().equals("spatial")) {
+				for(DDSS item : ddssList) {
+					if(item.getProductid().get(0).equals(result.get(i).getAsJsonObject().get("productid").getAsString())) 
+						setInformationDDSS(item, result, i);
+				}
 			}
 			
 		}
@@ -102,6 +107,8 @@ public class JSONDDSS {
 	}
 
 	private static void setInformationDDSS(DDSS ddss, JsonArray result, int i) {
+		
+		System.out.println(result.get(i).toString());
 		if(result.get(i).getAsJsonObject().has("productid")) ddss.addProductid(result.get(i).getAsJsonObject().get("productid").getAsString());
 		if(result.get(i).getAsJsonObject().has("labelclass") && result.get(i).getAsJsonObject().get("labelclass").getAsString().equals("title")) ddss.setTitle(result.get(i).getAsJsonObject().get("txtvalue").getAsString());
 		if(result.get(i).getAsJsonObject().has("labelclass") && result.get(i).getAsJsonObject().get("labelclass").getAsString().equals("identifier") && !result.get(i).getAsJsonObject().has("distributionid")) 
@@ -133,6 +140,10 @@ public class JSONDDSS {
 				ddss.setEndDate(endDate);
 			}*/
 		}
+		if(result.get(i).getAsJsonObject().has("labelclass") && result.get(i).getAsJsonObject().get("labelclass").getAsString().equals("spatial") && result.get(i).getAsJsonObject().get("txtvalue")!=null) {
+			System.out.println("HERE");
+			ddss.setSpatial(SpatialInformation.doSpatial(result.get(i).getAsJsonObject().get("txtvalue").getAsString()));
+		}
 	}
 
 	private static void setInformationDistribution(Distribution distribution, JsonArray result, int i) {
@@ -148,6 +159,9 @@ public class JSONDDSS {
 		if(result.get(i).getAsJsonObject().has("labelscheme") && result.get(i).getAsJsonObject().get("labelclass").getAsString().equals("minValue")) distribution.setStartDate(result.get(i).getAsJsonObject().get("txtvalue").getAsString());
 		if(result.get(i).getAsJsonObject().has("labelscheme") && result.get(i).getAsJsonObject().get("labelclass").getAsString().equals("maxValue")) distribution.setEndDate(result.get(i).getAsJsonObject().get("txtvalue").getAsString());
 		if(result.get(i).getAsJsonObject().has("labelscheme") && result.get(i).getAsJsonObject().get("labelclass").getAsString().equals("valuePattern")) distribution.setPattern(result.get(i).getAsJsonObject().get("txtvalue").getAsString());
-
+		if(result.get(i).getAsJsonObject().has("labelclass") && result.get(i).getAsJsonObject().get("labelclass").getAsString().equals("spatial")&& result.get(i).getAsJsonObject().get("txtvalue")!=null) {
+			System.out.println("HERE");
+			distribution.setSpatial(SpatialInformation.doSpatial(result.get(i).getAsJsonObject().get("txtvalue").getAsString()));
+		}
 	}
 }

@@ -17,6 +17,7 @@ public class Distribution {
 	private String startDate;
 	private String endDate;
 	private transient String pattern;
+	private Object spatial;
 	
 	private List<ServiceParameter> parameters;
 	
@@ -146,6 +147,12 @@ public class Distribution {
 				+ title + ", originalFormat=" + originalFormat + ", endpoint=" + endpoint + ", defaultFormat="
 				+ defaultFormat + ", defaultURL=" + defaultURL + ", downloadURL=" + downloadURL + ", type=" + type
 				+ ", startDate=" + startDate + ", endDate=" + endDate + ", parameters=" + parameters + "]";
+	}
+	public Object getSpatial() {
+		return spatial;
+	}
+	public void setSpatial(Object spatial) {
+		this.spatial = spatial;
 	}
 
 	

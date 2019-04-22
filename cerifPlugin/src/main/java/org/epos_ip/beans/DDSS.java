@@ -11,6 +11,7 @@ public class DDSS {
 	private String startDate;
 	private String endDate;
 	private ArrayList<Distribution> distributions;
+	private Object spatial;
 	
 
 	public DDSS(){
@@ -111,6 +112,14 @@ public class DDSS {
 
 	public void addProductid(String asString) {
 		if(!this.productid.contains(asString)) this.productid.add(asString);
+	}
+
+	public Object getSpatial() {
+		return spatial;
+	}
+
+	public void setSpatial(Object spatial) {
+		this.spatial = spatial;
 	}
 	
 	
