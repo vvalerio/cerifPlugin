@@ -250,11 +250,13 @@ public class CerifPluginInvoker extends CallableJavaPlugin {
 						}
 					}
 					try {
-						if(distr.getStartDate()!=null) {
-							distr.setStartDate(Utils.convert(distr.getStartDate(),distr.getPattern(),Utils.EPOS_internal_format));
-						}
-						if(distr.getEndDate()!=null) {
-							distr.setEndDate(Utils.convert(distr.getEndDate(),distr.getPattern(),Utils.EPOS_internal_format));
+						if(distr.getPattern()!=null) {
+							if(distr.getStartDate()!=null) {
+								distr.setStartDate(Utils.convert(distr.getStartDate(),distr.getPattern(),Utils.EPOS_internal_format));
+							}
+							if(distr.getEndDate()!=null) {
+								distr.setEndDate(Utils.convert(distr.getEndDate(),distr.getPattern(),Utils.EPOS_internal_format));
+							}
 						}
 					} catch (ParseException e1) {
 						e1.printStackTrace();
