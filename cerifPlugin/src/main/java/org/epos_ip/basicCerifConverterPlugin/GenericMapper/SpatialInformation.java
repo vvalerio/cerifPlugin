@@ -4,11 +4,12 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
 public class SpatialInformation {
-	/*
+	
 	public static void main(String[] args) {
 		SpatialInformation.doSpatial("POLYGON((-34 74,45 74,45 33,-34 33,-34 74))");
+		SpatialInformation.doSpatial("POLYGON(7.86 48.93, 7.87 48.94)");
 	}
-*/
+
 	public static JsonObject doSpatial(String spatial)
 	{
 		JsonObject spatialReturn = new JsonObject();
@@ -23,7 +24,7 @@ public class SpatialInformation {
 		
 		JsonArray path = new JsonArray();
 		for(String point : points) {
-			String[] latlon  = point.split(" ");
+			String[] latlon  = point.trim().split(" ");
 			JsonArray points1 = new JsonArray();
 			points1.add(Double.parseDouble(latlon[0]));
 			points1.add(Double.parseDouble(latlon[1]));
