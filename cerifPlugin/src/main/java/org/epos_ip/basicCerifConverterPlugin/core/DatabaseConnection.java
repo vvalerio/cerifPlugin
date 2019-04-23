@@ -20,7 +20,7 @@ public class DatabaseConnection<BsonArray>  {
 
 	private DatabaseConnection()
 	{
-		mongo = MongoClients.create("mongodb://localhost:27017");
+		mongo = MongoClients.create("mongodb://mongodb-0-4-0:27018");
 	}
 
 	public MongoClient getMongo() {
