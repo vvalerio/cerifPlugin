@@ -3,7 +3,7 @@ package org.epos_ip.beans;
 import java.util.List;
 
 public class Distribution {
-	
+
 	private transient String productid;
 	private transient String distributionid;
 	private String id;
@@ -18,9 +18,9 @@ public class Distribution {
 	private String endDate;
 	private transient String pattern;
 	private Object spatial;
-	
+
 	private List<ServiceParameter> parameters;
-	
+
 	public String getId() {
 		return id;
 	}
@@ -64,7 +64,7 @@ public class Distribution {
 	public void setDownloadURL(String downloadURL) {
 		this.downloadURL = downloadURL;
 	}
-	
+
 	public void setParameter(List<ServiceParameter> parameter) {
 		this.parameters = parameter;
 	}
@@ -130,7 +130,7 @@ public class Distribution {
 	 * @return the pattern
 	 */
 	public String getPattern() {
-		return pattern.replace("T", "'T'").replace("Z", "'Z'");
+		return pattern;
 	}
 	/**
 	 * @param pattern the pattern to set
@@ -155,5 +155,5 @@ public class Distribution {
 		this.spatial = spatial;
 	}
 
-	
+
 }
