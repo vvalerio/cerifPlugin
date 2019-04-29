@@ -5,10 +5,10 @@ import com.google.gson.JsonObject;
 
 public class SpatialInformation {
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		SpatialInformation.doSpatial("POLYGON((-34 74,45 74,45 33,-34 33,-34 74))");
 		SpatialInformation.doSpatial("POLYGON(7.86, 48.93, 7.87, 48.94)");
-	}
+	}*/
 
 	public static JsonObject doSpatial(String spatial)
 	{
