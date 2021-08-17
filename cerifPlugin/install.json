@@ -1,0 +1,11 @@
+{
+  "name": "cerifPlugin",
+  "install-location": "ICS/SoftwareApplication/",
+  "proxy-type": "JAVA_REFLECTION",
+  "codeRepository": "https://github.com/vvalerio/cerifPlugin.git",
+  "target-details": {
+    "internal-path": "/cerifPlugin/target/",
+    "jar-name": "cerifPlugin-0.0.1-SNAPSHOT-jar-with-dependencies.jar",
+    "package-class": "org.epos_ip.basicCerifConverterPlugin.core.CerifPluginInvoker"
+  }
+}
