@@ -1,0 +1,84 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http: <http://www.w3.org/2006/http#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+
+#PLUGIN AUTHOR
+<https://orcid.org/0000-0001-5805-9337> a schema:Person ;
+    schema:identifier [ a schema:PropertyValue ;
+      schema:propertyID  "orcid" ;
+      schema:value   "0000-0001-5805-9337" ;
+    ];
+	  schema:familyName "Vinciarelli" ;
+	  schema:givenName "Valerio" ;
+    schema:address [ a schema:PostalAddress ;
+	 	    schema:streetAddress "Via di vigna murata, 605" ;
+		    schema:addressLocality "Rome" ;
+		    schema:postalCode "00143" ;
+		    schema:addressCountry "Italy" ;
+	  ];
+    schema:email "valerio.vinciarelli@ingv.it" ;
+    schema:telephone "+XXXXXXXXX" ;
+    schema:url  "http://orcid.org/0000-0001-5805-9337"^^xsd:anyURI ;
+	  schema:qualifications "IT" ;
+	  schema:affiliation <PIC:999472675> ;
+    schema:contactPoint <http://orcid.org/0000-0001-7750-7254/developerContact> ;
+.
+
+# DEVELOPER CONTACT
+<http://orcid.org/0000-0001-5805-9337/developerContact> a schema:ContactPoint ;
+	schema:email "valerio.vinciarelli@ingv.it";
+	schema:availableLanguage "en" ;
+.
+
+<ICS/SoftwareSourceCode/cerifPlugin> a schema:SoftwareSourceCode;
+
+  schema:identifier "https://www.epos-eu.org/epos-dcat-ap/ICS/SoftwareSourceCode/Plugin/CERIF2JSON" ;
+  schema:name "Plugin for the conversion from CERIF to JSON payload" ;
+  schema:description "Plugin for the conversion from CERIF to JSON payload" ;
+  schema:softwareVersion "0.0.1";
+  # This property contains contact information that can be used for sending comments about the software.
+  schema:contactPoint <http://orcid.org/0000-0001-5805-9337/developerContact> ;
+  # Link to the repository where the code is located (gitlab, github).
+  schema:codeRepository "https://github.com/vvalerio/cerifPlugin.git"^^xsd:anyURI ;
+  # This property refers to the license under which the software is made available.
+  schema:license "https://github.com/vvalerio/cerifPlugin/blob/master/LICENSE"^^xsd:anyURI ;
+  # This property refers to the web page URL which describes the software.
+  schema:mainEntityOfPage "https://github.com/vvalerio/cerifPlugin/blob/master/README.md"^^xsd:anyURI ;
+  schema:programmingLanguage "Java" ;
+
+
+  ################################################
+  #                    TO BE ADDED
+  ################################################
+
+  ## INVOKER-TYPE;LANGUAGE VERSION;CLASSPATH;JARNAME;CLASS
+  schema:runtimePlatform "java-1.10" ;
+
+
+.
+
+<ICS/SoftwareApplication/cerifPlugin> a schema:SoftwareApplication;
+
+  schema:identifier "https://www.epos-eu.org/epos-dcat-ap/ICS/SoftwareApplication/Plugin/CERIF2JSON" ;
+
+  ################################################
+  #                    TO BE ADDED
+  ################################################
+
+  schema:softwareRequirements "Java-Reflection;cerifPlugin/target/;cerifPlugin-0.0.1-SNAPSHOT-jar-with-dependencies.jar;org.epos_ip.basicCerifConverterPlugin.core.CerifPluginInvoker" ;
+
+.
