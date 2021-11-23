@@ -16,69 +16,89 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
-#PLUGIN AUTHOR
-<https://orcid.org/0000-0001-5805-9337> a schema:Person ;
-    schema:identifier [ a schema:PropertyValue ;
-      schema:propertyID  "orcid" ;
-      schema:value   "0000-0001-5805-9337" ;
-    ];
-	  schema:familyName "Vinciarelli" ;
-	  schema:givenName "Valerio" ;
-    schema:address [ a schema:PostalAddress ;
-	 	    schema:streetAddress "Via di vigna murata, 605" ;
-		    schema:addressLocality "Rome" ;
-		    schema:postalCode "00143" ;
-		    schema:addressCountry "Italy" ;
-	  ];
-    schema:email "valerio.vinciarelli@ingv.it" ;
-    schema:telephone "+XXXXXXXXX" ;
-    schema:url  "http://orcid.org/0000-0001-5805-9337"^^xsd:anyURI ;
-	  schema:qualifications "IT" ;
-	  schema:affiliation <PIC:999472675> ;
-    schema:contactPoint <http://orcid.org/0000-0001-7750-7254/developerContact> ;
-.
+<Plugin/sourcecode/test> a schema:SoftwareSourceCode;
+  ################################################
+  #                 TOP INFORMATION
+  ################################################
 
-# DEVELOPER CONTACT
-<http://orcid.org/0000-0001-5805-9337/developerContact> a schema:ContactPoint ;
-	schema:email "valerio.vinciarelli@ingv.it";
-	schema:availableLanguage "en" ;
-.
-
-<ICS/SoftwareSourceCode/cerifPlugin> a schema:SoftwareSourceCode;
-
-  schema:identifier "https://www.epos-eu.org/epos-dcat-ap/ICS/SoftwareSourceCode/Plugin/CERIF2JSON" ;
-  schema:name "Plugin for the conversion from CERIF to JSON payload" ;
-  schema:description "Plugin for the conversion from CERIF to JSON payload" ;
+  schema:identifier "Plugin/sourcecode/test" ;
+  schema:name "Java-Reflection plugin for the conversion from CERIF to plain JSON" ;
+  schema:description "Java-Reflection plugin for the conversion from CERIF to plain JSON" ;
+  # This property refers to the version of the software.
   schema:softwareVersion "0.0.1";
-  # This property contains contact information that can be used for sending comments about the software.
-  schema:contactPoint <http://orcid.org/0000-0001-5805-9337/developerContact> ;
-  # Link to the repository where the code is located (gitlab, github).
+
+  ################################################
+  #                 PLUGIN SOFTWARE LOCATION
+  ################################################
+  # Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex).
   schema:codeRepository "https://github.com/vvalerio/cerifPlugin.git"^^xsd:anyURI ;
-  # This property refers to the license under which the software is made available.
+
+  ################################################
+  #                 PLUGIN LICENSE
+  ################################################
+
+  # This property refers to the licence under which the software is made available.
   schema:license "https://github.com/vvalerio/cerifPlugin/blob/master/LICENSE"^^xsd:anyURI ;
+
+
+  ################################################
+  #                   EXECUTION
+  ################################################
+
+  # The plugin programming language.
+  schema:programmingLanguage [ a schema:ComputerLanguage ;
+    schema:name "java" ;
+    schema:potentialAction [ a schema:Action ;
+      schema:object [ a schema:EntryPoint ; ##
+        schema:contentType "application/json" ;
+        schema:url "file://cerifPlugin/Configuration/icsjson.json" ;
+      ] ;
+      schema:result [ a schema:EntryPoint ;
+        schema:contentType "application/geo+json" ;
+        schema:url "file://cerifPlugin/Configuration/geojson.json" ;
+      ]
+      schema:instrument [ a schema:Thing ;
+        schema:name "Java-Reflection" ;
+        schema:description "cerifPlugin/target/;cerifPlugin-0.0.1-SNAPSHOT-jar-with-dependencies.jar;org.epos_ip.basicCerifConverterPlugin.core.CerifPluginInvoker" ;
+      ] ;
+    ]
+  ] ;
+
+  #the plugin execution information
+  ## INVOKER-TYPE;LANGUAGE VERSION;CLASSPATH;JARNAME;CLASS
+  schema:runtimePlatform "java-jre-1.10"
+
   # This property refers to the web page URL which describes the software.
   schema:mainEntityOfPage "https://github.com/vvalerio/cerifPlugin/blob/master/README.md"^^xsd:anyURI ;
-  schema:programmingLanguage "Java" ;
 
+  schema:keywords "Plugin", "Java-Reflection", "application/json", "cerif/resultSet" ;
 
-  ################################################
-  #                    TO BE ADDED
-  ################################################
-
-  ## INVOKER-TYPE;LANGUAGE VERSION;CLASSPATH;JARNAME;CLASS
-  schema:runtimePlatform "java-1.10" ;
-
-
+  schema:targetProduct <Plugin/application/test> ;
 .
 
-<ICS/SoftwareApplication/cerifPlugin> a schema:SoftwareApplication;
-
-  schema:identifier "https://www.epos-eu.org/epos-dcat-ap/ICS/SoftwareApplication/Plugin/CERIF2JSON" ;
-
+<Plugin/application/test> a schema:SoftwareApplication;
   ################################################
-  #                    TO BE ADDED
+  #                 TOP INFORMATION
   ################################################
 
-  schema:softwareRequirements "Java-Reflection;cerifPlugin/target/;cerifPlugin-0.0.1-SNAPSHOT-jar-with-dependencies.jar;org.epos_ip.basicCerifConverterPlugin.core.CerifPluginInvoker" ;
+  # This property contains one or more identifier for the software
+  schema:identifier "Plugin/application/test" ;
 
+  schema:name "Java-Reflection plugin for the conversion from CERIF to plain JSON" ;
+
+  schema:description "Java-Reflection plugin for the conversion from CERIF to plain JSON" ;
+
+  # This property refers to the version of the software.
+  schema:softwareVersion "0.0.1";
+
+  # This property refers to the licence under which the software is made available.
+  schema:license "https://github.com/vvalerio/cerifPlugin/blob/master/LICENSE"^^xsd:anyURI ;
+
+  # This property refers to the URL to download the software.
+  schema:downloadUrl "https://github.com/vvalerio/cerifPlugin.git"^^xsd:anyURI ;
+
+  # This property refers to the web page URL which describes the software.
+  schema:mainEntityOfPage "https://github.com/vvalerio/cerifPlugin/blob/master/README.md"^^xsd:anyURI ;
+
+  schema:keywords "Plugin", "Java-Reflection", "application/json", "cerif/resultSet" ;
 .
