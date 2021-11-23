@@ -66,7 +66,7 @@
 
   #the plugin execution information
   ## INVOKER-TYPE;LANGUAGE VERSION;CLASSPATH;JARNAME;CLASS
-  schema:runtimePlatform "java-jre-1.10"
+  schema:runtimePlatform "java-jre-1.10" ;
 
   # This property refers to the web page URL which describes the software.
   schema:mainEntityOfPage "https://github.com/vvalerio/cerifPlugin/blob/master/README.md"^^xsd:anyURI ;
@@ -89,7 +89,7 @@
   schema:description "Java-Reflection plugin for the conversion from CERIF to plain JSON" ;
 
   # This property refers to the version of the software.
-  schema:softwareVersion "0.0.1";
+  schema:softwareVersion "0.0.1" ;
 
   # This property refers to the licence under which the software is made available.
   schema:license "https://github.com/vvalerio/cerifPlugin/blob/master/LICENSE"^^xsd:anyURI ;
